@@ -1,0 +1,39 @@
+{
+  "name": "tuzzle",
+  "version": "0.1.0",
+  "description": "A 1:1 TypeScript port of Guzzle, the PHP HTTP client. See https://docs.guzzlephp.org/ for fidelity reference.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "tsx --test src/**/*.test.ts",
+    "clean": "rimraf dist .tsbuild"
+  },
+  "dependencies": {
+    "@tuzzle/message": "workspace:*",
+    "@tuzzle/promises": "workspace:*"
+  }
+}

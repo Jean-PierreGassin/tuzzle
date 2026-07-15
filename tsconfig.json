@@ -1,0 +1,8 @@
+{
+  "files": [],
+  "references": [
+    { "path": "packages/message" },
+    { "path": "packages/promises" },
+    { "path": "packages/tuzzle" }
+  ]
+}
