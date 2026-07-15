@@ -9,8 +9,10 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     strategy:
+      # engines.node is ">=20" (the package's runtime floor), but pnpm 11
+      # itself requires Node >=22.13 to run at all, so 20 can't appear here.
       matrix:
-        node-version: [20, 22, 24]
+        node-version: [22, 24]
     steps:
       - uses: actions/checkout@v4
 
